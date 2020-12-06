@@ -1,0 +1,44 @@
+menu.UploadSpeed=Upload Speed
+
+
+###########
+
+pinecone.name=PINE64 PineCone
+
+pinecone.upload.tool=flasher
+pinecone.upload.maximum_size=1310720
+pinecone.upload.maximum_data_size=327680
+pinecone.upload.wait_for_upload_port=true
+
+pinecone.serial.disableDTR=true
+pinecone.serial.disableRTS=true
+
+pinecone.build.mcu=bl602
+pinecone.build.core=bl602
+pinecone.build.variant=pinecone
+pinecone.build.board=PINECONE_EVB
+
+# pinecone.build.f_cpu=240000000L
+# pinecone.build.flash_size=4MB
+# pinecone.build.flash_freq=40m
+# pinecone.build.flash_mode=dio
+# pinecone.build.boot=dio
+# pinecone.build.partitions=default
+# pinecone.build.defines=
+
+pinecone.menu.UploadSpeed.2000000=2000000
+
+# pinecone.menu.UploadSpeed.921600=921600
+# pinecone.menu.UploadSpeed.921600.upload.speed=921600
+# pinecone.menu.UploadSpeed.115200=115200
+# pinecone.menu.UploadSpeed.115200.upload.speed=115200
+# pinecone.menu.UploadSpeed.256000.windows=256000
+# pinecone.menu.UploadSpeed.256000.upload.speed=256000
+# pinecone.menu.UploadSpeed.230400.windows.upload.speed=256000
+# pinecone.menu.UploadSpeed.230400=230400
+# pinecone.menu.UploadSpeed.230400.upload.speed=230400
+# pinecone.menu.UploadSpeed.460800.linux=460800
+# pinecone.menu.UploadSpeed.460800.macosx=460800
+# pinecone.menu.UploadSpeed.460800.upload.speed=460800
+# pinecone.menu.UploadSpeed.512000.windows=512000
+# pinecone.menu.UploadSpeed.512000.upload.speed=512000

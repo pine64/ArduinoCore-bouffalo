@@ -1,0 +1,91 @@
+name=Bouffalo Arduino Core
+version=0.0.1
+
+runtime.tools.riscv64-unknown-elf.path={runtime.platform.path}/tools/riscv64-unknown-elf
+
+# RISC-V compile variables
+# ---------------------
+runtime.tools.bl_iot_sdk_arduino.path={runtime.platform.path}/tools/sdk
+sdk.version=release_bl_iot_sdk_1.6.11-1-g66bb28da-dirty
+sdk.phy_ver=a0_final-44-geb7fadd
+sdk.rf_ver=f76e39a
+
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+compiler.warning_flags.more=-Wall -Werror=all
+compiler.warning_flags.all=-Wall -Werror=all -Wextra
+
+compiler.path={runtime.tools.riscv64-unknown-elf.path}/bin/
+
+compiler.general_flags= -march=rv32imfc -mabi=ilp32f -MMD -DCONF_USER_ENABLE_PSRAM -DconfigUSE_TICKLESS_IDLE=0 -DFEATURE_WIFI_DISABLE=1 -DCFG_FREERTOS -DARCH_RISCV -DBL602 -DCONFIG_SET_TX_PWR -DCFG_BLE_ENABLE -DBFLB_BLE -DCFG_BLE -DCFG_SLEEP -DOPTIMIZE_DATA_EVT_FLOW_FROM_CONTROLLER -DCFG_CON=2 -DCFG_BLE_TX_BUFF_DATA=2 -DCONFIG_BT_ALLROLES -DCONFIG_BT_CENTRAL -DCONFIG_BT_OBSERVER -DCONFIG_BT_PERIPHERAL -DCONFIG_BT_BROADCASTER -DCONFIG_BT_L2CAP_DYNAMIC_CHANNEL -DCONFIG_BT_GATT_CLIENT -DCONFIG_BT_CONN -DCONFIG_BT_GATT_DIS_PNP -DCONFIG_BT_GATT_DIS_SERIAL_NUMBER -DCONFIG_BT_GATT_DIS_FW_REV -DCONFIG_BT_GATT_DIS_HW_REV -DCONFIG_BT_GATT_DIS_SW_REV -DCONFIG_BT_ECC -DCONFIG_BT_GATT_DYNAMIC_DB -DCONFIG_BT_GATT_SERVICE_CHANGED -DCONFIG_BT_KEYS_OVERWRITE_OLDEST -DCONFIG_BT_KEYS_SAVE_AGING_COUNTER_ON_P -DCONFIG_BT_GAP_PERIPHERAL_PREF_PARAMS -DCONFIG_BT_BONDABLE -DCONFIG_BT_HCI_VS_EVT_USER -DCONFIG_BT_ASSERT -DCONFIG_BT_SMP -DCONFIG_BT_SIGNING -DCONFIG_BT_SETTINGS_CCC_LAZY_LOADING -DCONFIG_BT_SETTINGS_USE_PRINTK -DCFG_BLE_STACK_DBG_PRINT -D BL_SDK_VER={sdk.version} -D BL_SDK_PHY_VER={sdk.phy_ver} -D BL_SDK_RF_VER={sdk.rf_ver} -D BL_CHIP_NAME=BL602 -DARCH_RISCV -DCONFIG_PSM_EASYFLASH_SIZE=16384 -DconfigUSE_TICKLESS_IDLE=0 -DFEATURE_WIFI_DISABLE=1 -DCFG_BLE_ENABLE -DCONF_USER_ENABLE_PSRAM -DCONF_USER_ENABLE_VFS_ROMFS -DCFG_COMPONENT_BLOG_ENABLE=0 -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602 -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/StdDriver/Inc -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Device/Bouffalo/BL602/Peripherals -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/RISCV/Device/Bouffalo/BL602/Startup -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/RISCV/Core/Include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Common/platform_print -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Common/soft_crc -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Common/partition -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Common/xz -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Common/cipher_suite/inc -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/bl602_std/bl602_std/Common/ring_buffer -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blfdt -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blfdt/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blfdt/inc -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/blmtd -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/blmtd/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/blmtd/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blog -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blog/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blog -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blog_testc -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blog_testc/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/blog_testc -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bloop/bloop -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bloop/bloop/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bloop/bloop/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bltime -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bltime/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bltime/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/cli -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/cli/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/cli/cli/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/freertos_riscv_ram -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/freertos_riscv_ram/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/freertos_riscv_ram/config -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/freertos_riscv_ram/portable/GCC/RISC-V -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/freertos_riscv_ram/portable/GCC/RISC-V/chip_specific_extensions/RV32F_float_abi_single -I {runtime.tools.bl_iot_sdk_arduino.path}/include/bl602/freertos_riscv_ram/panic -I {runtime.tools.bl_iot_sdk_arduino.path}/include/hal_drv -I {runtime.tools.bl_iot_sdk_arduino.path}/include/hal_drv/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/hal_drv/bl602_hal -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bloop/looprt -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bloop/looprt/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bloop/loopset -I {runtime.tools.bl_iot_sdk_arduino.path}/include/sys/bloop/loopset/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/fs/romfs -I {runtime.tools.bl_iot_sdk_arduino.path}/include/fs/romfs/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/utils -I {runtime.tools.bl_iot_sdk_arduino.path}/include/utils/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/fs/vfs -I {runtime.tools.bl_iot_sdk_arduino.path}/include/fs/vfs/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/fs/vfs/posix/include -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/yloop -I {runtime.tools.bl_iot_sdk_arduino.path}/include/stage/yloop/include
+
+compiler.c.cmd=riscv64-unknown-elf-gcc
+compiler.c.flags=-c {compiler.warning_flags} -std=gnu99 -Os -gdwarf -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fshort-enums -ffreestanding -fno-strict-aliasing
+compiler.c.elf.cmd=riscv64-unknown-elf-gcc
+compiler.c.elf.flags={compiler.warning_flags} -march=rv32imfc -mabi=ilp32f -Os "-L{runtime.tools.bl_iot_sdk_arduino.path}/lib" "-L{runtime.tools.bl_iot_sdk_arduino.path}/ld" -nostartfiles -Wl,--gc-sections -Wl,-static
+
+compiler.c.elf.libs=-T flash.ld -lbl602 -lbl602_std -lblfdt -lblmtd -lblog -lblog_testc -lbloop -lbltime -lcli -lfreertos_riscv_ram -lhal_drv -llooprt -lloopset -lromfs -lutils -lvfs -lyloop
+
+compiler.S.flags=-c -MMD -g \
+compiler.cpp.cmd=riscv64-unknown-elf-g++
+compiler.cpp.flags=-c -Os {compiler.warning_flags} -std=c++11 -gdwarf -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fshort-enums -ffreestanding -fno-strict-aliasing -fno-use-cxa-atexit -nostdlib -Wpointer-arith -fexceptions -fstack-protector -fno-rtti -fno-exceptions -fms-extensions -Werror=return-type
+
+compiler.ar.cmd=riscv64-unknown-elf-gcc-ar
+compiler.ar.flags=rcs
+compiler.objcopy.cmd=riscv64-unknown-elf-objcopy
+compiler.objcopy.bin.flags=-S -O binary
+compiler.ldflags=
+compiler.libraries.ldflags=
+compiler.size.cmd=riscv64-unknown-elf-size
+
+# This can be overridden in boards.txt
+build.extra_flags=
+
+# These can be overridden in platform.local.txt
+compiler.c.extra_flags=
+compiler.c.elf.extra_flags=
+compiler.S.extra_flags=
+compiler.cpp.extra_flags=
+compiler.ar.extra_flags=
+compiler.objcopy.eep.extra_flags=
+compiler.elf2hex.extra_flags=
+
+# RISCV compile patterns
+# --------------------
+
+
+## Compile c files
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} {compiler.general_flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.c.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+
+## Compile c++ files
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {compiler.general_flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+
+## Compile S files
+recipe.S.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.S.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.S.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+
+## Create archives
+# archive_file_path is needed for backwards compatibility with IDE 1.6.5 or older, IDE 1.6.6 or newer overrides this value
+archive_file_path={build.path}/{archive_file}
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+
+## Combine gc-sections, archives, and objects
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} {compiler.ldflags} -Wl,--start-group {object_files} {compiler.libraries.ldflags} {compiler.c.elf.libs} "{build.path}/{archive_file}" -Wl,--end-group -Wl,-EL -lm -o "{build.path}/{build.project_name}.elf"
+
+
+## ELF to BIN
+recipe.objcopy.elf.pattern={compiler.path}/{compiler.objcopy.cmd} {compiler.objcopy.bin.flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex=^(?:\.text|\.data|\.bootloader)\s+([0-9]+).* # TODO: Need to add everything
+recipe.size.regex.data=^(?:\.data|\.bss|\.noinit)\s+([0-9]+).*
+
+runtime.tools.flasher.path={runtime.platform.path}/tools/flasher
+tools.flasher.path={runtime.tools.flasher.path}
+tools.flasher.cmd=bl602-flasher
+tools.flasher.cmd.linux=bl602-flasher.py
+tools.flasher.cmd.windows=bl602-flasher.exe
+tools.flasher.upload.protocol=bl602
+tools.flasher.upload.params.verbose=
+tools.flasher.upload.params.quiet=
+tools.flasher.upload.pattern="{path}/{cmd}" "{serial.port}" "{build.path}/{build.project_name}.bin"
