@@ -4,7 +4,7 @@
 This is community made Arduino Core for Bouffalo Labs RISC-V MCUs. The target is to make this core compatible with AVR and ESP32/ESP8266 Arduino Core for easy migrating of existing projects.
 # Supported MCUs
 - [X] BL602
-- [ ] BL606 
+- [ ] BL604
 
 # How To Install
 In Arduino IDE, go to `File > Preferences`, and add to  `Additional Boards Manager URLs` following:
