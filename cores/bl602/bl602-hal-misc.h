@@ -7,6 +7,8 @@
 
 void setupArduino();
 
+void yield(void);
+
 unsigned long millis(void);
 unsigned long micros(void);
 

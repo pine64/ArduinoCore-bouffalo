@@ -17,6 +17,12 @@ static HeapRegion_t xHeapRegions[] =
 };
 
 
+extern "C" void __cxa_pure_virtual()
+{
+  printf("Pure virtual function was called!\n");
+  while (1);
+}
+
 void eventLoopTask(void *params)
 {
   setupArduino();

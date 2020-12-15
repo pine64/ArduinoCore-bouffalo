@@ -28,7 +28,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <inttypes.h>
-#include <math.h>
+#include <algorithm>
+#include <cmath>
 
 #ifdef __cplusplus
 extern "C" {
@@ -56,6 +57,14 @@ extern TaskHandle_t rtosMainTask;
 #define LSBFIRST 0
 #define MSBFIRST 1
 
+#define digitalPinToPort(pin)       (pin % 32)
+#define digitalPinToBitMask(pin)    (1UL << (pin % 32))
+//#define digitalPinToTimer(pin)      (0)
+//#define analogInPinToBit(P)         (P) // TODO: 
+#define portOutputRegister(port)    ((volatile uint32_t*)(0x40000000 + 0x188 + (port * 4)))
+#define portInputRegister(port)     ((volatile uint32_t*)(0x40000000 + 0x180 + (port * 4)))
+//#define portModeRegister(port)      ((volatile uint32_t*)((port)?GPIO_ENABLE1_REG:GPIO_ENABLE_REG))
+
 #define bit(b) (1UL << (b))
 #define _BV(b) (1UL << (b))
 
@@ -71,5 +80,12 @@ void loop(void);
 #include "Printable.h"
 #include "Print.h"
 #include "HardwareSerial.h"
+
+using std::abs;
+using std::isinf;
+using std::isnan;
+using std::max;
+using std::min;
+using ::round;
 
 #endif

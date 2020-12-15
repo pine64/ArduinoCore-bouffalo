@@ -6,6 +6,7 @@
 #include <task.h>
 #include <bl_timer.h>
 #include <bl_pwm.h>
+#include <portmacro.h>
 
 void setupArduino()
 {
@@ -26,6 +27,11 @@ void setupArduino()
         PWM_Channel_Disable(i);
         PWM_Channel_Init(&pwm_cfg);
     }
+}
+
+void yield()
+{
+    portYIELD();
 }
 
 void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize)

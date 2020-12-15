@@ -40,6 +40,10 @@ public:
     uint8_t endTransmission(bool stop = true);
 
     uint8_t requestFrom(uint16_t address, uint8_t quantity);
+    uint8_t requestFrom(uint16_t address, uint8_t quantity, uint8_t stop) {
+        return this->requestFrom(address, quantity);
+        // TODO:
+    }
     // uint8_t requestFrom(uint16_t address, uint8_t quantity); // TODO: Subaddress
 
     size_t write(const uint8_t *, size_t);
