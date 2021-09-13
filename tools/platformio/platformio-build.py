@@ -228,7 +228,6 @@ env.Append(
         "-Os",
         "-march=%s" % board_config.get("build.march"),
         "-mabi=%s" % board_config.get("build.mabi"),
-        "--specs=nano.specs",
         "-nostartfiles",
         "-Wl,--gc-sections,--relax",
         "-Wl,--check-sections",
