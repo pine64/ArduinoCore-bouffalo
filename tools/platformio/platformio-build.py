@@ -164,10 +164,7 @@ env.Append(
         ("CFG_COMPONENT_BLOG_ENABLE", 0)
     ],
     CPPPATH=[
-        join(FRAMEWORK_DIR, "cores", "arduino", "api", "deprecated"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "api", "deprecated-avr-comp"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "gd32"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "gd32", "Source"),
+        join(FRAMEWORK_DIR, "cores", "bl602"),
         join(BL_IOT_SDK_DIR, "include", "bl602", "bl602"),
         join(BL_IOT_SDK_DIR, "include", "bl602", "bl602", "include"), 
         join(BL_IOT_SDK_DIR, "include", "bl602", "bl602_std"),
@@ -321,7 +318,7 @@ if "build.variant" in board_config:
     env.BuildSources(join("$BUILD_DIR", "FrameworkArduinoVariant"), variant_dir)
 
 libs.append(env.BuildLibrary(
-    join("$BUILD_DIR", "FrameworkArduino"), join(FRAMEWORK_DIR, "cores", "arduino")
+    join("$BUILD_DIR", "FrameworkArduino"), join(FRAMEWORK_DIR, "cores", "bl602")
 ))
 
 env.Prepend(LIBS=libs)
