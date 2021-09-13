@@ -1,7 +1,7 @@
 {
   "name": "framework-arduinobouffalo",
   "version": "5.00001.210913",
-  "description": " BL602 Arduino Core for Arduino IDE ",
+  "description": "BL602 Arduino Core for Arduino IDE",
   "keywords": [
     "framework",
     "arduino",
