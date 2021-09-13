@@ -95,7 +95,7 @@ env.Append(
 
         "-gdwarf", 
         "-ffunction-sections",
-        "-fdata-sections"
+        "-fdata-sections",
         "-fstrict-volatile-bitfields",
         "-fshort-enums",
         "-ffreestanding",
@@ -226,11 +226,10 @@ env.Append(
     ], 
     LINKFLAGS=[
         "-Os",
-        "-mthumb",
         "-march=%s" % board_config.get("build.march"),
         "-mabi=%s" % board_config.get("build.mabi"),
         "--specs=nano.specs",
-        "-nostartfiles "
+        "-nostartfiles",
         "-Wl,--gc-sections,--relax",
         "-Wl,--check-sections",
         "-Wl,--entry=Reset_Handler",
