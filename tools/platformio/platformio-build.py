@@ -232,11 +232,11 @@ env.Append(
         "-nostartfiles",
         "-Wl,--gc-sections,--relax",
         "-Wl,--check-sections",
-        "-Wl,--entry=Reset_Handler",
         "-Wl,--unresolved-symbols=report-all",
         "-Wl,--warn-common",
         "-Wl,--defsym=LD_MAX_SIZE=%d" % board_config.get("upload.maximum_size"),
         "-Wl,--defsym=LD_MAX_DATA_SIZE=%d" % board_config.get("upload.maximum_ram_size"),
+        "-Wl,-static"
     ],
     LIBS=[
         "c",
