@@ -1,0 +1,15 @@
+{
+  "name": "framework-arduinobouffalo",
+  "version": "5.00001.210913",
+  "description": "BL602 Arduino Core for Arduino IDE",
+  "keywords": [
+    "framework",
+    "arduino",
+    "bl602",
+    "riscv"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxgerhardt/ArduinoCore-bouffalo.git"
+  }
+}
