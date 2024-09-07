@@ -1,3 +1,9 @@
+# THIS LIBRARY IS DEPRECATED
+
+The current state of the library is deprecated, as it wasn't updated for longer time. The repository also does not work for some time.
+
+There is plan to rework it and add support for other Bouffalo chips, so stay tuned!
+
 # Arduino Core for Bouffalo's RISC-V MCUs
 [Discord](https://discord.gg/89VWQVH) | [Matrix](https://matrix.to/#/#pine64-nutcracker:matrix.org) | [Telegram](https://t.me/joinchat/Kmi2S0nOsT240emHk-aO6g)
 
